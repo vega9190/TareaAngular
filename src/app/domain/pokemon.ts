@@ -1,4 +1,4 @@
 export interface Pokemon {
-    url: number;
+    url: string;
     name: string;
 }
