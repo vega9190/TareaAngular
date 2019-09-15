@@ -1,3 +1,11 @@
 table, th, td {
     border: 1px solid black;
   }
+
+img{
+  border: solid;
+}
+
+#Back{
+  margin-left: 5px;
+}

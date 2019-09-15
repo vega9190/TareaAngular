@@ -1,16 +1,20 @@
 <div>
-<img src="{{pokemonDetalle.front_default}}">
-<img src="{{pokemonDetalle.back_default}}">
-        <table>
-                <thead>
-                    <th>Número Pokedex</th>
-                    <th>Nombre</th>
-                </thead>
-                <tbody>
-                    <tr >
-                        <td>{{pokemonDetalle.id}}</td>
-                        <td> {{ pokemonDetalle.name }} </td>
-                    </tr>
-                </tbody>
-            </table>
+    
+        <img src="{{imagenFront}}" [@shinyAnimationFront]="stateFront" (click)="cambiarFront()">
+        <img id="Back" src="{{imagenBack}}" [@shinyAnimationBack]="stateBack" (click)="cambiarBack()">
+
+    
+    <table>
+        <thead>
+            <th>Número Pokedex</th>
+            <th>Nombre</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{pokemonDetalle.id}}</td>
+                <td> {{ pokemonDetalle.name }} </td>
+            </tr>
+        </tbody>
+    </table>
+    
 </div>

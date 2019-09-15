@@ -59,6 +59,6 @@ function toPokemonDetalle(obj: any): PokemonDetalle {
   s.back_default = obj.sprites.back_default;
   s.front_default = obj.sprites.front_default;
   s.front_shiny = obj.sprites.front_shiny;
-  s.back_shiny = obj.sprites.back_default
+  s.back_shiny = obj.sprites.back_shiny;
   return s;
 }
