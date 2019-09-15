@@ -13,7 +13,7 @@ export class PokemonService {
   urlBase = 'https://pokeapi.co/api/v2/pokemon';
   constructor(private http: HttpClient) { }
   cache: Pokemon[] = null;
-
+  cant: number = 0;
   get(): Observable<Pokemon[]> {
     if (this.cache) {
       return of(this.cache);
@@ -30,6 +30,42 @@ export class PokemonService {
       map(a => {
         const pokemones = toPokemones(a);
         this.cache = pokemones;
+        return pokemones;
+      })
+    );
+  }
+
+  next(): Observable<Pokemon[]> {
+    const options = {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      }
+    };
+    this.cant = this.cant + 20;
+    const url = this.urlBase + '?offset=' + this.cant + '&limit=20';
+
+    return this.http.get(url, options).pipe(
+      map(a => {
+        const pokemones = toPokemones(a);
+        return pokemones;
+      })
+    );
+  }
+
+  prev(): Observable<Pokemon[]> {
+    const options = {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      }
+    };
+    this.cant = this.cant - 20;
+    const url = this.urlBase + '?offset=' + this.cant + '&limit=20';
+
+    return this.http.get(url, options).pipe(
+      map(a => {
+        const pokemones = toPokemones(a);
         return pokemones;
       })
     );

@@ -22,6 +22,18 @@ export class ListPokemonComponent implements OnInit {
     );
   }
 
+  next(){
+    this.sub = this.pokemonService.next().subscribe(
+      data => { this.loadData(data); },
+      error => { this.handleError(error); }
+    );
+  }
+  prev(){
+    this.sub = this.pokemonService.prev().subscribe(
+      data => { this.loadData(data); },
+      error => { this.handleError(error); }
+    );
+  }
   loadData(data: Pokemon[]): void {
     this.error = null;
     this.pokemones = data;
