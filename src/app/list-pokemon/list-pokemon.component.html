@@ -9,8 +9,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let pokemon of pokemones">
-                <td>{{pokemon.name}}</td>
-                <td></td>
+                <td>{{pokemon.name | nombreUpperCase: pokemon.name}}</td>
+                <td> <button [routerLink]= "['/detallePokemon', pokemon.name]"> Detalle </button> </td>
             </tr>
         </tbody>
     </table>

@@ -1,0 +1,6 @@
+<h2>Detalle de un pokemon</h2>
+    <app-pokemon-detalle *ngIf="pokemonDetalle" [pokemonDetalle]="pokemonDetalle"></app-pokemon-detalle>
+    <div *ngIf="error" class="error">
+        {{ error }}
+    </div>
+    <button (click)="back()">Volver</button>

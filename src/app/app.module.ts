@@ -7,12 +7,20 @@ import { AppComponent } from './app.component';
 import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { PokemonDetalleComponent } from './pokemon-detalle/pokemon-detalle.component';
+import { NombreUpperCasePipe } from './pipes/nombre-upper-case.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListPokemonComponent,
-    PokemonComponent
+    PokemonComponent,
+    DetailPokemonComponent,
+    WelcomeComponent,
+    PokemonDetalleComponent,
+    NombreUpperCasePipe
   ],
   imports: [
     BrowserModule,
